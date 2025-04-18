@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jatin - IT Support Specialist & Network Technician</title>
+    <style>
+        :root {
+            --primary-color: #1d2b3a;
+            --secondary-color: #ff7f50;
+            --accent-color: #ff7f50;
+            --light-color: #f5f5f5;
+            --dark-color: #1d2b3a;
+            --text-color: #333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #d7f5f9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        
+        .logo {
+            color: var(--primary-color);
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        /* Hero Section - Modern Aesthetic */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            position: relative;
+            background-color: #f4f0e8;
+            overflow: hidden;
+        }
+        
+        .hero-text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px;
+            z-index: 2;
+            max-width: 50%;
+        }
+        
+        .hero-image {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero h1 {
+            font-size: 64px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            line-height: 1.1;
+        }
+        
+        .hero h2 {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: var(--secondary-color);
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 500px;
+            margin-bottom: 40px;
+            color: #555;
+        }
+        
+        .social-icons {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 127, 80, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 127, 80, 0.4);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            margin-left: 15px;
+            box-shadow: none;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+            box-shadow: 0 8px 20px rgba(29, 43, 58, 0.3);
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            z-index: 2;
+        }
+        
+        .scroll-indicator span {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .scroll-arrow {
+            width: 30px;
+            height: 30px;
+            border-right: 3px solid var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+            transform: rotate(45deg);
+            animation: scrollAnimation 2s infinite;
+        }
+        
+        @keyframes scrollAnimation {
+            0% {
+                opacity: 0;
+                transform: rotate(45deg) translate(-10px, -10px);
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: rotate(45deg) translate(10px, 10px);
+            }
+        }
+        
+        .animated-shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .shape1 {
+            width: 300px;
+            height: 300px;
+            background-color: var(--secondary-color);
+            top: -100px;
+            left: -100px;
+        }
+        
+        .shape2 {
+            width: 200px;
+            height: 200px;
+            background-color: var(--primary-color);
+            bottom: -50px;
+            right: 30%;
+        }
+        
+        .shape3 {
+            width: 150px;
+            height: 150px;
+            background-color: var(--secondary-color);
+            top: 30%;
+            right: 10%;
+        }
+        
+        .desktop-mockup {
+            position: absolute;
+            bottom: 0;
+            right: 5%;
+            width: 80%;
+            z-index: 2;
+        }
+        
+        /* 3D workspace scene */
+        .workspace-scene {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            right: -20%;
+        }
+        
+        /* About Section */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 42px;
+            color: var(--primary-color);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            margin: 15px auto;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        .about-img {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .about-img img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: var(--shadow);
+        }
+        
+        .about-text {
+            flex: 2;
+        }
+        
+        .about-text h3 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .skill-category {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            padding: 10px;
+            flex: 1;
+            min-width: 170px;
+            max-width: 200px;
+            transition: transform 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-10px);
+        }
+        
+        .skill-category h3 {
+            color: var(--secondary-color);
+            margin-bottom: 25px;
+            font-size: 22px;
+            text-align: center;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            padding: 12px 0;
+            position: relative;
+            padding-left: 30px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .skill-list li::before {
+            content: '✓';
+            color: var(--secondary-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        
+        .experience-timeline {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.timeline-item {
+    flex: 1 1 calc(33.333% - 40px); /* 3 items per row with gap */
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    padding: 40px;
+    position: relative;
+}
+
+.timeline-item:hover {
+    transform: translateY(-5px);
+}
+
+.timeline-date {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.timeline-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.timeline-content h4 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.timeline-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.timeline-content ul li {
+    margin-bottom: 8px;
+}
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 20px;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 180px;
+            background-color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .project-img i {
+            font-size: 60px;
+            color: white;
+        }
+        
+        .project-content {
+            padding: 20px;
+        }
+        
+        .project-content h3 {
+            font-size: 20px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .project-content h4 {
+            font-size: 16px;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        .project-content p {
+            margin-bottom: 20px;
+        }
+        
+        /* Education & Certifications Section */
+        .edu-cert-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .edu-cert-column {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .edu-cert-item {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+        
+        .edu-cert-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .edu-cert-item h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .edu-cert-item h4 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .edu-cert-item p.time {
+            font-style: italic;
+            margin-bottom: 15px;
+            color: #666;
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-form {
+            flex: 2;
+            min-width: 400px;
+        }
+        
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info p i {
+            margin-right: 15px;
+            color: var(--secondary-color);
+            width: 20px;
+        }
+        
+        .contact-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .contact-social a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-social a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(255, 127, 80, 0.2);
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .btn-submit {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 127, 80, 0.3);
+        }
+        
+        .btn-submit:hover {
+            background-color: #ff6b3d;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 127, 80, 0.4);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 40px 0 30px;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .footer-content p {
+            margin-bottom: 20px;
+        }
+        
+        /* Media Queries */
+   
+        @media (max-width: 1200px) {
+            .hero-text {
+                padding: 40px;
+            }
+            
+            .workspace-scene {
+                right: -30%;
+            }
+        }
+      
+    
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero {
+                flex-direction: column;
+            }
+            
+            .hero-text {
+                max-width: 100%;
+                text-align: center;
+                align-items: center;
+                padding: 80px 20px 40px;
+            }
+            
+            .workspace-scene {
+                position: relative;
+                right: 0;
+                height: 50vh;
+            }
+            
+            .experience-timeline::before {
+                left: 40px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 80px;
+                padding-right: 20px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content::after,
+            .timeline-item:nth-child(even) .timeline-content::after {
+                left: -10px;
+                top: 25px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-date,
+            .timeline-item:nth-child(even) .timeline-date {
+                left: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .skill-category {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">Jatin<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="mailto:jatin.ambala028@gmail.com">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section - Updated with 3D aesthetic -->
+    <section id="home" class="hero">
+        <div class="animated-shape shape1"></div>
+        <div class="animated-shape shape2"></div>
+        <div class="animated-shape shape3"></div>
+        
+        <div class="hero-text">
+            <h1>Hi, my name is<br><span style="color: var(--secondary-color);">Jatin</span></h1>
+            <h2>IT Support & Network Technician | Passionate About Empowering <br> Systems & Optimizing Infrastructure</h2>
+            <div>
+                <a href="mailto:jatin.ambala028@gmail.com" class="btn">Get in touch</a>
+                <a href="#projects" class="btn btn-outline">My Work</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://linkedin.com/in/jatin-O28" target="_blank">in</a>
+                <a href="mailto:jatin.ambala028@gmail.com">@</a>
+                <a href="tel:+15197316071">📞</a>
+            </div>
+        </div>
+        
+<div class="workspace-scene">
+    <img src="images/portfolio.jpg" alt="Desk Setup with Computer Workspace" style="width: 65%; height: auto;">
+</div>   
+                
+        
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="images/computer.png" alt="Jatin's Profile Picture">
+                </div>
+                <div class="about-text">
+                    <h3>IT Support Specialist & Computer System Technician</h3>
+                    <p>Detail-oriented and customer-focused Computer System Technician and IT Support Specialist providing technical support, troubleshooting hardware and software issues, and maintaining IT infrastructure. Adept at resolving complex technical challenges, delivering exceptional service, and implementing efficient solutions to improve system performance and user satisfaction.</p>
+                    <p>Strong knowledge of Linux, Windows, and network systems, combined with a commitment to continuous learning and professional development.</p>
+                    <div style="margin-top: 30px;">
+                        <a href="mailto:jatin.ambala028@gmail.com" class="btn">Contact me</a>
+                        <a href="#projects" class="btn btn-outline">View My Work</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="section" style="background-color: #f0f4f8;">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Networking</h3>
+                    <ul class="skill-list">
+                        <li>TCP/IP Protocols</li>
+                        <li>DNS & DHCP Configuration</li>
+                        <li>VLANs</li>
+                        <li>Cisco Routers/Switches</li>
+                        <li>Network Troubleshooting</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Hardware & Systems</h3>
+                    <ul class="skill-list">
+                        <li>PC Assembly & Repair</li>
+                        <li>Hardware Troubleshooting</li>
+                        <li>System Diagnostics</li>
+                        <li>Peripheral Setup</li>
+                        <li>IT Infrastructure Maintenance</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Scripting & Automation</h3>
+                    <ul class="skill-list">
+                        <li>Python (Basics)</li>
+                        <li>PowerShell</li>
+                        <li>Bash Scripting</li>
+                        <li>Task Automation</li>
+                        <li>System Monitoring</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Database & Web</h3>
+                    <ul class="skill-list">
+                        <li>MySQL</li>
+                        <li>Basic SQL Queries</li>
+                        <li>HTML/CSS</li>
+                        <li>Git & GitHub</li>
+                        <li>Web Hosting</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>System Administration</h3>
+                    <ul class="skill-list">
+                        <li>Windows Server</li>
+                        <li>Active Directory</li>
+                        <li>Group Policy</li>
+                        <li>DNS Configuration</li>
+                        <li>Remote Desktop</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Cybersecurity</h3>
+                    <ul class="skill-list">
+                        <li>Basic Penetration Testing</li>
+                        <li>Kali Linux</li>
+                        <li>Firewall Configuration</li>
+                        <li>Antivirus Management</li>
+                        <li>Security Best Practices</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>IT Support Specialist (Technician)</h3>
+                        <h4>George Brown College</h4>
+                        <span class="timeline-date">2024</span>
+                        <ul>
+                            <li>Delivered technical support to faculty and students by troubleshooting hardware, software, and connectivity issues.</li>
+                            <li>Maintained and repaired lab equipment, ensuring optimal performance of PCs, printers, and peripheral devices.</li>
+                            <li>Configured and installed software applications required for academic exercises and technical lab demonstrations.</li>
+                            <li>Facilitated student training sessions to improve effective use of lab resources and computing technologies.</li>
+                            <li>Documented lab procedures and created user-friendly troubleshooting guides for recurring technical issues.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Customer Service Representative</h3>
+                        <h4>Staples</h4>
+                        <span class="timeline-date">2024</span>
+                        <ul>
+                            <li>Provided expert-level technical support on a wide range of products, including computers, printers, and networking devices.</li>
+                            <li>Installed and maintained computer systems, printers, and peripherals to support customers with technical needs.</li>
+                            <li>Collaborated with team members and managers to meet sales goals and enhance overall store performance.</li>
+                            <li>Handled returns and refunds in accordance with company policies to ensure a smooth customer experience.</li>
+                            <li>Maintained up-to-date knowledge of products and services to deliver accurate recommendations and solutions.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Network Technician</h3>
+                        <h4>Visual Protection</h4>
+                        <span class="timeline-date">2024</span>
+                        <ul>
+                            <li>Installed and configured surveillance camera systems, ensuring coverage and functionality for security purposes.</li>
+                            <li>Designed and implemented network infrastructure to support surveillance systems, including structured cabling, router, and switch configurations.</li>
+                            <li>Diagnosed and resolved technical issues related to network connectivity, video surveillance equipment, and software integration.</li>
+                            <li>Performed system maintenance and troubleshooting, ensuring uninterrupted operation of security and networking systems.</li>
+                            <li>Provided client training and support, educating end-users on proper system usage, troubleshooting techniques, and best security practices.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="section" style="background-color: #f0f4f8;">
+        <div class="container">
+            <h2 class="section-title">Technical Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <div style="font-size: 60px; color: white;">☁️</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Cloud-Based Virtual Lab Environment</h3>
+                        <h4>Virtualization & Cloud Computing</h4>
+                        <p>Built a cloud-hosted virtual lab using VMware and AWS to simulate real-world IT infrastructure. Deployed Linux and Windows VMs for testing network segmentation, firewall rules, and cloud services integration.</p>
+                        <p><strong>Skills Gained:</strong> Virtualization, Cloud Computing, Linux & Windows Admin, System Automation</p>
+                        <p><strong>Impact:</strong> Provided a scalable, sandboxed lab for self-paced learning and hands-on system testing.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <div style="font-size: 60px; color: white;">🖥️</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Windows Server Infrastructure Setup</h3>
+                        <h4>Server Administration</h4>
+                        <p>Deployed and managed a virtualized Windows Server 2019 environment with Active Directory, DNS, DHCP, and Group Policy Objects (GPOs).</p>
+                        <p><strong>Skills Gained:</strong> Windows Server Administration, AD, GPOs, DHCP, DNS</p>
+                        <p><strong>Impact:</strong> Streamlined user and policy management, mimicking enterprise IT environments for hands-on skill development.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <div style="font-size: 60px; color: white;">🔌</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Multi-Site Network Deployment Simulation</h3>
+                        <h4>Network Design & Security</h4>
+                        <p>Designed and configured a simulated multi-site enterprise network using Cisco Packet Tracer and physical hardware. Implemented VLANs, inter-VLAN routing, DHCP, and ACLs to secure and segment network traffic.</p>
+                        <p><strong>Skills Gained:</strong> Network Design, Cisco Configuration, Routing & Switching, Network Security</p>
+                        <p><strong>Impact:</strong> Created a secure and scalable network infrastructure suitable for medium-sized business environments.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <div style="font-size: 60px; color: white;">💻</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Remote Desktop Support Setup</h3>
+                        <h4>Remote Troubleshooting</h4>
+                        <p>Designed a virtual support lab using Any Desk, TeamViewer, and Remote Desktop Protocol to simulate off-site support.</p>
+                        <p><strong>Skills Gained:</strong> Remote Troubleshooting, Client Support Tools, System Diagnostics</p>
+                        <p><strong>Impact:</strong> Developed practical skills in remote IT assistance, crucial for modern hybrid work environments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Education & Certifications Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title">Education & Certifications</h2>
+            <div class="edu-cert-container">
+                <div class="edu-cert-column">
+                    <h3 style="margin-bottom: 20px; color: var(--primary-color);">Education</h3>
+                    <div class="edu-cert-item">
+                        <h3>Computer System Technician Networking</h3>
+                        <h4>George Brown College, Toronto, ON</h4>
+                        <p class="time">Jan 2024 - April 2025</p>
+                        <p><strong>Coursework:</strong> Fundamentals of Computing Logic, Cyber Security, Windows Server Network Infrastructure, Professional Workplace Competencies, Personal Finance, Mathematics for Computer Technology, Linux Essentials, Introduction to Programming, and Network Automation</p>
+                    </div>
+                    
+                    <div class="edu-cert-item">
+                        <h3>Computer Web Development Diploma</h3>
+                        <h4>Hartron, India</h4>
+                        <p class="time">May 2022 - March 2023</p>
+                        <p><strong>Coursework:</strong> HTML, CSS, JavaScript, Responsive Web Design, Front-End Development, Back-End Development (PHP, Node.js), Database Management (MySQL, NOSQL), Web Hosting & Deployment, Cybersecurity for Web Development, CMS & E-Commerce Development, Version Control (Git & GitHub), Web Application Development.</p>
+                    </div>
+                    <div class="edu-cert-item">
+                        <h3>High school diploma</h3>
+                        <h4>GMS school, Ambala, HR</h4>
+                        <p class="time">Jan 2022 - April 2023</p>
+                        <p><strong>Coursework:</strong> Computer Science and Mathematics</p>
+                    </div>
+                </div>
+                <div class="edu-cert-column">
+                    <h3 style="margin-bottom: 20px; color: var(--primary-color);">Certifications</h3>
+                    <div class="edu-cert-item">
+                        <h3>CompTIA A+</h3>
+                        <p class="time">In Progress</p>
+                        <p>Industry-standard certification validating skills in troubleshooting, hardware, and software technologies.</p>
+                    </div>
+                    <div class="edu-cert-item">
+                        <h3>Cisco Certified Network Associate (CCNA)</h3>
+                        <p>Validates ability to install, configure, operate, and troubleshoot medium-size routed and switched networks.</p>
+                    </div>
+                    <div class="edu-cert-item">
+                        <h3>Computer Web Development Diploma</h3>
+                        <p>The Computer Web Development Diploma equipped me with practical skills in front-end and back-end development. I learned to build responsive websites using HTML5, CSS3, JavaScript, and Bootstrap, and developed dynamic web applications with PHP, Node.js, and MySQL.</p>
+                    </div>
+                    <div class="edu-cert-item">
+                        <h3>Google IT Support Professional Certificate</h3>
+                        <p>Developed by Google, covering troubleshooting, customer service, networking, operating systems, system administration, and security.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Achievements Section -->
+    <section class="section" style="background-color: #f0f4f8;">
+        <div class="container">
+            <h2 class="section-title">Achievements</h2>
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="edu-cert-item">
+                    <ul>
+                        <li>Awarded "Employee of the Month" for exceptional support and innovative problem-solving.</li>
+                        <li>Successfully led a team of 5 members during a college-wide hardware upgrade project.</li>
+                        <li>Earned top performance in coursework related to Cybersecurity, Linux Essentials, and Network Automation.</li>
+                    </ul>
+                </div
